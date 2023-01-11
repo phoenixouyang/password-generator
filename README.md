@@ -20,7 +20,7 @@ Once you click 'Generate Password', you will be prompted to answer a few questio
 4. If you'd like to include numbers (0123456789)
 5. If you'd like to include special characters (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)
 
-![password-webpage] (./assets/password-generator.png)
+![passwordpage](./assets/password-generator.png)
 
 ## Credits
 
