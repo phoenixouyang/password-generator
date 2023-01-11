@@ -13,13 +13,31 @@ if (passLength < 8|| passLength > 128 || !passLength) {
 }
 // Get user input for password characters
 else {
-  let lowerAlphaConfirm = window.confirm("Do you want lower case letters in your password? Click 'OK' for yes, 'Cancel' for no.");
-  let upperAlphaConfirm = window.confirm("Do you want upper case letters in your password? Click 'OK' for yes, 'Cancel' for no.");
-  let numbersConfirm = window.confirm("Do you want numbers in your password? Click 'OK' for yes, 'Cancel' for no.");
-  let specialCharConfirm = window.confirm("Do you want special characters in your password? Click 'OK' for yes, 'Cancel' for no.");
+  var lowerAlphaConfirm = window.confirm("Do you want lower case letters in your password? Click 'OK' for yes, 'Cancel' for no.");
+  var upperAlphaConfirm = window.confirm("Do you want upper case letters in your password? Click 'OK' for yes, 'Cancel' for no.");
+  var numbersConfirm = window.confirm("Do you want numbers in your password? Click 'OK' for yes, 'Cancel' for no.");
+  var specialCharConfirm = window.confirm("Do you want special characters in your password? Click 'OK' for yes, 'Cancel' for no.");
 };
 
+// Validate whether user chose at least one type of character to include
+if (!lowerAlphaConfirm && !upperAlphaConfirm && !numbersConfirm && !specialCharConfirm) {
+  alert("Please try again. You must select at least one type of character for your password.")
+};
 
+let passCharacters = ""
+
+if (lowerAlphaConfirm === true) {
+  passCharacters = passCharacters.concat(lowerAlpha)
+};
+if (upperAlphaConfirm === true) {
+  passCharacters = passCharacters.concat(upperAlpha)
+};
+if (numbersConfirm === true) {
+  passCharacters = passCharacters.concat(numbers)
+};
+if (specialCharConfirm === true) {
+  passCharacters = passCharacters.concat(specialChar)
+};
 
 
 // Get references to the #generate element
