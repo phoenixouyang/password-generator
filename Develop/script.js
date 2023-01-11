@@ -1,4 +1,13 @@
 // Assignment code here
+const lowerAlpha = "abcdefghijklmnopqrstuvwxyz";
+const upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const specialChar = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+let passLength = prompt("Please enter your desired password length (between 8 and 128 characters)");
+if (passLength < 8|| passLength > 128 || passLength === undefined) {
+  alert("Please enter a password length between 8 and 128 characters")
+}
 
 
 // Get references to the #generate element
