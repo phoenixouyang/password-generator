@@ -45,12 +45,12 @@ function generatePassword() {
     passCharacters = passCharacters.concat(specialChar)
   };
 
-  // Generate password
+  // Loop to generate password based on selected length and criteria
   var generatedPassword = "";
   for (let i = 0; i < passLength; i++) {
       generatedPassword += passCharacters.charAt(Math.floor(Math.random() * passCharacters.length));
   };
-  
+
   return generatedPassword;
 };
 
