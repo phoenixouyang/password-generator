@@ -19,11 +19,12 @@ else {
   var specialCharConfirm = window.confirm("Do you want special characters in your password? Click 'OK' for yes, 'Cancel' for no.");
 };
 
-// Validate whether user chose at least one type of character to include
+// Validate whether user input
 if (!lowerAlphaConfirm && !upperAlphaConfirm && !numbersConfirm && !specialCharConfirm) {
-  alert("Please try again. You must select at least one type of character for your password.")
+  alert("Please attempt to generate your password again. You require a valid length (8-128 characters), and at least one character type")
 };
 
+// Create new string of characters based on password criteria selected by user
 let passCharacters = ""
 
 if (lowerAlphaConfirm === true) {
@@ -39,13 +40,26 @@ if (specialCharConfirm === true) {
   passCharacters = passCharacters.concat(specialChar)
 };
 
+// Generate password
+function generatePassword(length,characters) {
+  var generatedPassword = "";
+  var length = passLength;
+  var characters = passCharacters;
+  for (let i = 0; i < passLength; i++) {
+    generatedPassword += characters.charAt(Math.floor(Math.random() * characters.length));
+  };
+  return generatedPassword;
+};
+
+console.log(generatePassword())
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(passLength, passCharacters);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
